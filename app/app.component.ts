@@ -7,13 +7,15 @@ export class Hero {
 
 @Component({
     selector: 'my-app',
-    template:`
-		  <h1>{{title}}</h1>
-		  <h2>{{hero.name}} details!</h2>
-		  <div id="heroId"><label>id: </label>{{hero.id}}</div>
-		  <div id="heroName"><label>name: </label>{{hero.name}}</div>
-  		`
-
+	template:`
+	  <h1>{{title}}</h1>
+	  <h2>{{hero.name}} details!</h2>
+	  <div><label>id: </label>{{hero.id}}</div>
+	  <div>
+	    <label>name: </label>
+	    <input value="{{hero.name}}" placeholder="name">
+	  </div>
+	  `
 })
 
 export class AppComponent {
