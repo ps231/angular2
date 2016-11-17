@@ -21,15 +21,36 @@ describe('AppComponent', function () {
   beforeEach(() => {
     fixture = TestBed.createComponent(AppComponent);
     comp = fixture.componentInstance;
-    de = fixture.debugElement.query(By.css('h1'));
   });
 
   it('should create component', () => expect(comp).toBeDefined() );
 
-  it('should have expected <h1> text', () => {
+  it('should have expected title text', () => {
+    de = fixture.debugElement.query(By.css('h1'));
     fixture.detectChanges();
     const h1 = de.nativeElement;
     expect(h1.innerText).toMatch(/heroes/i,
-      '<h1> should say something about "Heroes"');
+      'title should say something about "Heroes"');
   });
+
+   it('should have expected hero\'s information', () => {
+    de = fixture.debugElement.query(By.css('h2'));
+    fixture.detectChanges();
+    const h2 = de.nativeElement;
+    expect(h2.innerText).toMatch(/Windstorm details!/i,
+      '<h2> should show hero\'s details');
+
+      de = fixture.debugElement.query(By.css('div'));
+    fixture.detectChanges();
+    const id = de.nativeElement;
+    expect(id.innerText).toMatch(/1/i,
+      '<h2> should show hero\'s id');
+
+           // de = fixture.debugElement.query(By.css('div'));
+    //fixture.detectChanges();
+    //const name = de.nativeElement;
+    //expect(name.innerText).toMatch(/Windstorm/i,
+      //'<h2> should show hero\'s name');
+
+  }); 
 });
