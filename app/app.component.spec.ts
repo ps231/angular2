@@ -4,6 +4,7 @@ import { AppComponent } from './app.component';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By }           from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 ////////  SPECS  /////////////
 describe('AppComponent', function () {
@@ -13,7 +14,8 @@ describe('AppComponent', function () {
 
   beforeEach(async(() => {
    TestBed.configureTestingModule({
-      declarations: [ AppComponent ]
+      declarations: [ AppComponent ],
+      imports: [FormsModule]
     })
     .compileComponents();
   }));
