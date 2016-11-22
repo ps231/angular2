@@ -26,7 +26,7 @@ const HEROES: Hero[] = [
 			</li>
 		</ul>
 	<my-hero-detail [hero]="selectedHero"></my-hero-detail>
-	  `
+	  `,
 	  styles: [`
   .selected {
     background-color: #CFD8DC !important;
